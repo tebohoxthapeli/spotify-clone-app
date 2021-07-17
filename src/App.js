@@ -1,14 +1,19 @@
 import './App.css';
 import Login from './Login';
-import React, { useEffect, useState } from 'react';
+import Player from './Player';
+import React, { useEffect } from 'react';
 import { getTokenFromUrl } from './spotify';
+import SpotifyWebApi from 'spotify-web-api-js';
+import { useDataLayerValue } from './DataLayer';
+
+const spotify = new SpotifyWebApi();
 
 function App() {
-  const [token, setToken] = useState(null);
+  const [{ user, token }, dispatch] = useDataLayerValue();
 
   useEffect(() => {
     document.title = 'Spotify Clone';
-  });
+  }, []);
 
   useEffect(() => {
     const hash = getTokenFromUrl();
@@ -16,14 +21,31 @@ function App() {
     window.location.hash = '';
 
     if (_token) {
-      setToken(_token);
+
+      dispatch({
+        type: 'SET_TOKEN',
+        token: _token
+      });
+
+      spotify.setAccessToken(_token);
+
+      // returns a promise
+      spotify.getMe()
+      .then(user => {
+        dispatch({ type: 'SET_USER', user });
+      })
+      .catch(err => {
+        console.error('There was an error retrieving the user.');
+      });
     }
-  });
+  }, [dispatch]);
+
+  console.log('user', user);
+  console.log('token', token);
 
   return (
     <div className="app">
-      { token ? <h1>I am logged in</h1> : <Login /> }
-      <Login />
+      { token ? <Player /> : <Login /> }
     </div>
   );
 }
