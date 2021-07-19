@@ -45,7 +45,7 @@ function App() {
 
   return (
     <div className="app">
-      { token ? <Player /> : <Login /> }
+      { token ? <Player spotify={spotify} /> : <Login /> }
     </div>
   );
 }
