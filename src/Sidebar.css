@@ -10,6 +10,19 @@
 .sidebar__logo {
     display: block;
     height: 70px;
-    /* might remove the padding underneath */
-    padding: 10px;
+}
+
+.sidebar__title {
+    display: block;
+    margin: 10px 0;
+    margin-left: 10px;
+    font-size: 18px;
+    /* border: 1px solid blue; */
+}
+
+.sidebar > hr {
+    border: 1px solid #282828;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 15px;
 }

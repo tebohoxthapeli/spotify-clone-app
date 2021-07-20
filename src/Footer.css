@@ -1,8 +1,44 @@
 .footer {
     position: fixed;
     bottom: 0;
+    display: flex;
+    justify-content: space-between;
     height: 65px;
-    width: 100%;
+    width: 96%;
     background-color: #282828;
     padding: 20px;
+}
+
+.footer__left {
+    border: 1px solid white;
+    flex: 0.3;
+}
+
+.footer__center {
+    border: 1px solid white;
+    flex: 0.4;
+    padding: 0 100px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 300px;
+}
+
+.footer__right {
+    border: 1px solid white;
+    flex: 0.3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.footer__right > * {
+    height: 100%;
+}
+
+.footer__right > * > * {
+    display: flex;
+    align-items: center;
 }

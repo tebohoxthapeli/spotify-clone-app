@@ -9,7 +9,7 @@ import { useDataLayerValue } from './DataLayer';
 const spotify = new SpotifyWebApi();
 
 function App() {
-  const [{ user, token }, dispatch] = useDataLayerValue();
+  const [{ token }, dispatch] = useDataLayerValue();
 
   useEffect(() => {
     document.title = 'Spotify Clone';
@@ -21,7 +21,6 @@ function App() {
     window.location.hash = '';
 
     if (_token) {
-
       dispatch({
         type: 'SET_TOKEN',
         token: _token
@@ -29,19 +28,34 @@ function App() {
 
       spotify.setAccessToken(_token);
 
-      // returns a promise
-      spotify.getMe()
-      .then(user => {
-        dispatch({ type: 'SET_USER', user });
-      })
-      .catch(err => {
-        console.error('There was an error retrieving the user.');
-      });
+      async function getSpotifyUser() {
+        try {
+          const user = await spotify.getMe();
+          dispatch({ type: 'SET_USER', 
+          user });
+        }
+        catch(err) {
+          console.error(err);
+        }
+      }
+      getSpotifyUser();
+
+      async function getSpotifyPlaylists() {
+        try {
+          const playlists = await spotify.getUserPlaylists();
+          dispatch({
+            type: 'SET_PLAYLISTS',
+            playlists
+          });
+          console.log(playlists);
+        }
+        catch(err) {
+          console.error(err);
+        }
+      }
+      getSpotifyPlaylists();
     }
   }, [dispatch]);
-
-  console.log('user', user);
-  console.log('token', token);
 
   return (
     <div className="app">
