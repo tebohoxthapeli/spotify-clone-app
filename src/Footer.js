@@ -1,35 +1,52 @@
 import React from 'react';
 import './Footer.css';
-import { PlayCircleOutline, SkipPrevious, SkipNext, Shuffle, Repeat, PlaylistPlay, VolumeDown } from '@material-ui/icons';
+import { PauseCircleFilled, SkipPrevious, SkipNext, Shuffle, Repeat, PlaylistPlay, VolumeDownOutlined, FavoriteBorderOutlined, BlockOutlined } from '@material-ui/icons';
 import { Grid, Slider } from '@material-ui/core';
 
 function Footer() {
     return (
         <div className="footer">
             <div className="footer__left">
-                <p>Album and song details</p>
+                <div className="container">
+                    <img className="footer__albumArt" 
+                        src="https://upload.wikimedia.org/wikipedia/en/thumb/5/59/6lackEastAtlantaLoveLetter.jpg/220px-6lackEastAtlantaLoveLetter.jpg" alt="cover" />
+
+                    <div className="footer__songInfo">
+                        <h4>Unfair</h4>
+                        <p>6LACK</p>
+                    </div>
+
+                    <div className="footer__left_icons">
+                        <FavoriteBorderOutlined />
+                        <BlockOutlined />
+                    </div>
+                </div>
             </div>
 
             <div className="footer__center">
-                <Shuffle className="footer__green"/>
-                <SkipPrevious className="footer_icon"/>
-                <PlayCircleOutline fontSize="large" className="footer_green" />
-                <SkipNext className="footer_icon"/>
-                <Repeat className="footer_green" />
+                <div className="container">
+                    <Shuffle />
+                    <SkipPrevious className="prev" />
+                    <PauseCircleFilled className="pause" />
+                    <SkipNext className="next"/>
+                    <Repeat />
+                </div>
             </div>
 
             <div className="footer__right">
-                <Grid container spacing={2}>
-                    <Grid item>
-                        <PlaylistPlay />
+                <div className="container">
+                    <Grid container spacing={2}>
+                        <Grid item>
+                            <PlaylistPlay />
+                        </Grid>
+                        <Grid item>
+                            <VolumeDownOutlined />
+                        </Grid>
+                        <Grid item xs>
+                            <Slider />
+                        </Grid>
                     </Grid>
-                    <Grid item>
-                        <VolumeDown />
-                    </Grid>
-                    <Grid item xs>
-                        <Slider />
-                    </Grid>
-                </Grid>
+                </div>
             </div>
         </div>
     );

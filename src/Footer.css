@@ -4,41 +4,109 @@
     display: flex;
     justify-content: space-between;
     height: 65px;
-    width: 96%;
-    background-color: #282828;
-    padding: 20px;
+    width: 97%;
+    background-color: #181818;
+    padding: 14px 20px;
+    border-top: 1px solid rgb(51, 51, 51);
 }
 
-.footer__left {
-    border: 1px solid white;
-    flex: 0.3;
+.footer__left > .container,
+.footer__center > .container,
+.footer__right > .container * {
+    color: rgb(173, 170, 170);
+}
+
+.footer__songInfo > h4 {
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+}
+
+.footer__songInfo > p:hover,
+.footer__center > .container *:hover,
+.pause {
+    color: white;
+}
+
+.footer__songInfo > p {
+    font-size: 11px;
+}
+
+.footer__songInfo > *:hover {
+    text-decoration-line: underline;
+}
+
+.footer__songInfo > *,
+.footer__albumArt {
+    cursor: pointer;
+}
+
+.footer__albumArt {
+    height: 60px;
+    width: 60px;
+    margin-right: 10px;
+    object-fit: contain;
+}
+
+.footer__songInfo {
+    margin-right: 10px;
+}
+
+.footer__left_icons > * {
+    margin-left: 15px;
+    transform: scale(0.75);
+}
+
+.footer > * {
+    flex: 1;
+    display: flex;
+}
+
+.footer__left > .container {
+    display: flex;
+    align-items: center;
+    width: 100%;
 }
 
 .footer__center {
-    border: 1px solid white;
-    flex: 0.4;
-    padding: 0 100px;
-    color: white;
+    justify-content: center;
+}
+
+.footer__center > .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 300px;
+    width: 45%;
+}
+
+.prev {
+    margin-left: 5px;
+}
+
+.pause {
+    transform: scale(1.75);
+}
+
+.next {
+    margin-right: 5px;
 }
 
 .footer__right {
-    border: 1px solid white;
-    flex: 0.3;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: white;
+    position: relative;
 }
 
-.footer__right > * {
+.footer__right > .container {
+    position: absolute;
+    right: 0%;
     height: 100%;
+    width: 45%;
 }
 
-.footer__right > * > * {
+.footer__right > .container > * {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    transform: translate(8px, 8px);
 }

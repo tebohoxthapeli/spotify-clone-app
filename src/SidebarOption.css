@@ -2,22 +2,32 @@
     display: flex;
     align-items: center;
     color: gray;
-    padding: 6px 0;
+    padding: 10px 0;
     cursor: pointer;
     transition: 200ms color ease-in;
-    /* border: 1px solid white; */
 }
 
 .sidebarOption:hover {
     color: white;
 }
 
+.selected {
+    border-radius: 5px;
+    background: rgb(37, 37, 37);
+    color: white;
+}
+
+.playlist {
+    padding: 5px 0;
+}
+
 .title {
-    font-size: 18px;
+    font-size: 14px;
 }
  
 .sidebarOption__icon {
-    margin: 0 10px;
+    transform: scale(1.3);
+    margin: 0 20px;
 }
 
 .sidebarOption > p {
