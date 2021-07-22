@@ -54,6 +54,20 @@ function App() {
         }
       }
       getSpotifyPlaylists();
+
+      async function getDiscoverWeekly() {
+        try {
+          const discover_weekly = await spotify.getPlaylist('37i9dQZEVXcHrEzzkFatKp');
+          dispatch({
+            type: 'SET_DISCOVER_WEEKLY',
+            discover_weekly
+          });
+        }
+        catch(err) {
+          console.error(err);
+        }
+      }
+      getDiscoverWeekly();
     }
   }, [dispatch]);
 

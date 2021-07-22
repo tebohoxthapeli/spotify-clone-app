@@ -1,7 +1,64 @@
 .body {
-    background: linear-gradient(rgb(91, 87, 115), rgba(0, 0, 0, 1));
     height: 100vh;
     width: 83vw;
+    padding: 20px;
+    margin-left: 19.9vw;
+    background: linear-gradient(rgb(91, 87, 115), rgba(0, 0, 0, 1));
     color: white;
-    padding: 30px;
+}
+
+.body__info {
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid black;
+}
+
+.body__info > img {
+    margin-right: 20px;
+    height: 20vw;
+    box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5);
+}
+
+.body__infoText {
+    width: 65%;
+}
+
+.body__infoText > strong {
+    font-size: 12px;
+}
+
+.body__infoText > h2 {
+    font-size: 82px;
+    margin-bottom: 10px;
+    transform: translate(-5px);
+}
+
+.body__infoText > p {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.body__icons {
+    display: flex;
+    align-items: center;
+    border: 1px solid white;
+}
+
+.fav,
+.more {
+    font-size: 40px !important;
+}
+
+.body__icons > .MuiSvgIcon-root {
+    margin-right: 20px;
+}
+
+.play__shuffle {
+    font-size: 65px !important;
+}
+
+.play__shuffle:hover {
+    transform: scale(1.05);
 }

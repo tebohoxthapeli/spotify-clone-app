@@ -1,6 +1,6 @@
 import React from 'react';
 import './Footer.css';
-import { PauseCircleFilled, SkipPrevious, SkipNext, Shuffle, Repeat, PlaylistPlay, VolumeDownOutlined, FavoriteBorderOutlined, BlockOutlined } from '@material-ui/icons';
+import { PauseCircleFilled, SkipPrevious, SkipNext, Shuffle, Repeat, PlaylistPlay, VolumeDownOutlined, Favorite, BlockOutlined } from '@material-ui/icons';
 import { Grid, Slider } from '@material-ui/core';
 
 function Footer() {
@@ -17,19 +17,19 @@ function Footer() {
                     </div>
 
                     <div className="footer__left_icons">
-                        <FavoriteBorderOutlined />
-                        <BlockOutlined />
+                        <Favorite className="footer__green" />
+                        <BlockOutlined className="blockOutlined"/>
                     </div>
                 </div>
             </div>
 
             <div className="footer__center">
                 <div className="container">
-                    <Shuffle />
+                    <Shuffle className="footer__green" />
                     <SkipPrevious className="prev" />
                     <PauseCircleFilled className="pause" />
-                    <SkipNext className="next"/>
-                    <Repeat />
+                    <SkipNext className="next" />
+                    <Repeat className="footer__green" />
                 </div>
             </div>
 
