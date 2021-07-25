@@ -17,8 +17,8 @@ function Footer() {
                     </div>
 
                     <div className="footer__left_icons">
-                        <Favorite className="footer__green" />
-                        <BlockOutlined className="blockOutlined"/>
+                        <Favorite className="footer__fav"/>
+                        <BlockOutlined className="footer__block" />
                     </div>
                 </div>
             </div>

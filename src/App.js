@@ -47,7 +47,6 @@ function App() {
             type: 'SET_PLAYLISTS',
             playlists
           });
-          console.log(playlists);
         }
         catch(err) {
           console.error(err);
@@ -62,6 +61,7 @@ function App() {
             type: 'SET_DISCOVER_WEEKLY',
             discover_weekly
           });
+          console.log(discover_weekly);
         }
         catch(err) {
           console.error(err);

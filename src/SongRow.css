@@ -1,0 +1,106 @@
+.songRow {
+    display: grid;
+    grid-template-columns: 0.5fr 3.5fr 3fr 2fr 1fr;
+    align-items: center;
+    padding: 8px 0;
+    border-radius: 5px;
+    font-weight: 500;
+    color: rgb(173, 170, 170);
+}
+
+.songRow:hover {
+    background-color: rgb(46, 45, 45);
+}
+
+.songRow__title h3,
+.songRow:hover .artists,
+.songRow:hover .songRow__albumName {
+    color: white;
+}
+
+.songRow:hover .songRow__trackNum > p {
+    display: none;
+}
+
+.songRow:hover .playArrow,
+.songRow:hover .songRow__fav,
+.songRow:hover .songRow__remove,
+.songRow:hover .songRow__more {
+    display: initial !important;
+}
+
+.playArrow,
+.songRow__fav,
+.songRow__remove,
+.songRow__more {
+    display: none !important;
+}
+
+.songRow p {
+    font-size: 14px;
+}
+
+.songRow h3 {
+    font-size: 16px;
+}
+
+.songRow__trackNum {
+    justify-self: center;
+    display: flex;
+    align-items: center;
+}
+
+.songRow__trackNum > p {
+    font-size: 18px;
+}
+
+.playArrow,
+.songRow__more {
+    color: white !important;
+}
+
+.songRow__title {
+    display: flex;
+}
+
+.songRow__album {
+    height: 40px;
+    width: 40px;
+    margin-right: 15px;
+}
+
+.songRow__date__added {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.date__added__icons {
+    display: flex;
+    align-items: center;
+}
+
+.songRow__fav,
+.songRow__remove {
+    transform: scale(0.75) !important;
+    margin-right: 10px !important;
+}
+
+.songRow__fav:hover,
+.songRow__remove:hover {
+    color: white !important;
+}
+
+.songRow__duration {
+    display: flex;
+    align-items: center;
+}
+
+.songRow__duration > p {
+    margin-right: 30px;
+}
+
+.songRow__duration__icon {
+    display: flex;
+    align-items: center;
+}
