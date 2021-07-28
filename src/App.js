@@ -9,11 +9,8 @@ import { useDataLayerValue } from './DataLayer';
 const spotify = new SpotifyWebApi();
 
 function App() {
+  document.title = 'Spotify Clone';
   const [{ token }, dispatch] = useDataLayerValue();
-
-  useEffect(() => {
-    document.title = 'Spotify Clone';
-  }, []);
 
   useEffect(() => {
     const hash = getTokenFromUrl();
@@ -31,8 +28,9 @@ function App() {
       async function getSpotifyUser() {
         try {
           const user = await spotify.getMe();
-          dispatch({ type: 'SET_USER', 
-          user });
+          dispatch({ 
+            type: 'SET_USER', 
+            user });
         }
         catch(err) {
           console.error(err);
@@ -61,7 +59,6 @@ function App() {
             type: 'SET_DISCOVER_WEEKLY',
             discover_weekly
           });
-          console.log(discover_weekly);
         }
         catch(err) {
           console.error(err);

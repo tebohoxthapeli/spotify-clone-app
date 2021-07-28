@@ -2,13 +2,28 @@ import { PlayArrow, FavoriteBorderRounded, RemoveCircleOutline, MoreHoriz } from
 import React from 'react';
 import './SongRow.css';
 
+const now = new Date();
+
+const dateDiff = (first, second) => {
+    return Math.round((second - first) / (1000 * 60 * 60 * 24));
+}
+
+const toMinSec = duration => {
+    let sec = Math.trunc(parseInt(duration) / 1000);
+    if (sec < 60) return `0:${sec}`;
+    
+    let min = Math.trunc(sec / 60);
+    sec = sec % 60;
+    if (sec === 0) return `${min}:00`;
+    
+    sec = sec.toString();
+    
+    if (sec.length === 1) sec = `0${sec}`;
+    
+    return `${min}:${sec}`;
+};
+
 function SongRow({ song, num }) {
-    const now = new Date();
-
-    const dateDiff = (first, second) => {
-        return Math.round((second-first) / (1000 * 60 * 60 * 24));
-    }
-
     return (
         <div className="songRow">
             <div className="songRow__trackNum">
@@ -39,7 +54,7 @@ function SongRow({ song, num }) {
             </div>
 
             <div className="songRow__duration">
-                <p>3:36</p>
+                <p>{toMinSec(song.track.duration_ms)}</p>
 
                 <div className="songRow__duration__icon">
                     <MoreHoriz className="songRow__more" />
